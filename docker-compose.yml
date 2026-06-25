@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: genki
       POSTGRES_PASSWORD: genki
     ports:
-      - "${POSTGRES_PORT:-5432}:5432"
+      - "${POSTGRES_PORT:-5438}:5432"
     volumes:
       - genki_postgres:/var/lib/postgresql/data
     healthcheck:
@@ -34,14 +34,14 @@ services:
       dockerfile: docker/api.Dockerfile
     environment:
       APP_ENV: development
-      APP_PORT: 3000
+      APP_PORT: 3005
       APP_SECRET_KEY: local-compose-secret-key-change-before-production
       DATA_ENCRYPTION_KEY: local-compose-data-key-change-before-production
       DATABASE_URL: postgres://genki:genki@postgres:5432/genki
       REDIS_URL: redis://redis:6379
       WEB_ORIGIN: http://localhost:5173
     ports:
-      - "${API_PORT:-3000}:3000"
+      - "${API_PORT:-3005}:3005"
     depends_on:
       postgres:
         condition: service_healthy
@@ -53,7 +53,7 @@ services:
       context: .
       dockerfile: docker/web.Dockerfile
     environment:
-      VITE_API_URL: http://localhost:3000/api/v1
+      VITE_API_URL: http://localhost:3005/api/v1
     ports:
       - "${WEB_PORT:-5173}:5173"
     depends_on:

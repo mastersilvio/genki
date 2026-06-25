@@ -6,5 +6,5 @@ RUN bun install --frozen-lockfile
 RUN bun --cwd apps/api build
 
 USER bun
-EXPOSE 3000
+EXPOSE 3005
 CMD ["bun", "apps/api/dist/index.js"]

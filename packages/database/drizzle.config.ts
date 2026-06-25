@@ -6,7 +6,7 @@ export default defineConfig({
   dialect: "postgresql",
   dbCredentials: {
     url:
-      process.env.DATABASE_URL ?? "postgres://genki:genki@localhost:5432/genki",
+      process.env.DATABASE_URL ?? "postgres://genki:genki@localhost:5438/genki",
   },
   strict: true,
   verbose: true,

@@ -19,7 +19,7 @@ jobs:
           POSTGRES_USER: genki
           POSTGRES_PASSWORD: genki
         ports:
-          - 5432:5432
+          - 5438:5432
         options: >-
           --health-cmd "pg_isready -U genki -d genki"
           --health-interval 5s
@@ -38,7 +38,7 @@ jobs:
       APP_ENV: test
       APP_SECRET_KEY: ci-only-secret-key-with-thirty-two-characters
       DATA_ENCRYPTION_KEY: ci-only-data-key-with-thirty-two-characters
-      DATABASE_URL: postgres://genki:genki@localhost:5432/genki
+      DATABASE_URL: postgres://genki:genki@localhost:5438/genki
       REDIS_URL: redis://localhost:6379
     steps:
       - uses: actions/checkout@v4
