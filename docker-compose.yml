@@ -39,7 +39,7 @@ services:
       DATA_ENCRYPTION_KEY: local-compose-data-key-change-before-production
       DATABASE_URL: postgres://genki:genki@postgres:5432/genki
       REDIS_URL: redis://redis:6379
-      WEB_ORIGIN: http://localhost:5173
+      WEB_ORIGIN: http://localhost:5174
     ports:
       - "${API_PORT:-3005}:3005"
     depends_on:
@@ -55,7 +55,7 @@ services:
     environment:
       VITE_API_URL: http://localhost:3005/api/v1
     ports:
-      - "${WEB_PORT:-5173}:5173"
+      - "0.0.0.0:${WEB_PORT:-5174}:5174"
     depends_on:
       - api
 

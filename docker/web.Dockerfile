@@ -6,5 +6,5 @@ RUN bun install --frozen-lockfile
 RUN chown -R bun:bun /app
 
 USER bun
-EXPOSE 5173
+EXPOSE 5174
 CMD ["bun", "--cwd", "apps/web", "dev"]

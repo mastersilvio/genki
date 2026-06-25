@@ -18,7 +18,7 @@ const environmentSchema = z.object({
   REDIS_URL: z.string().default("redis://localhost:6379"),
   STORAGE_BACKEND: z.enum(["local", "s3"]).default("local"),
   LOCAL_STORAGE_PATH: z.string().default("./storage"),
-  WEB_ORIGIN: z.string().default("http://localhost:5173"),
+  WEB_ORIGIN: z.string().default("http://localhost:5174"),
 });
 
 export type Environment = z.infer<typeof environmentSchema>;

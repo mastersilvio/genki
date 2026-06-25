@@ -41,7 +41,7 @@ Serviços:
 
 - API: http://localhost:3005
 - OpenAPI: http://localhost:3005/api/v1/openapi
-- Web: http://localhost:5173
+- Web: http://localhost:5174 (bind em `0.0.0.0:5174`)
 - PostgreSQL: `localhost:5438`
 - Redis: `localhost:6379`
 
