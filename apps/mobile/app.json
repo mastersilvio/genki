@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Genki",
+    "slug": "genki",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "genki",
+    "userInterfaceStyle": "light",
+    "plugins": ["expo-router", "expo-secure-store"],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "dev.genki.mobile"
+    },
+    "android": {
+      "package": "dev.genki.mobile"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

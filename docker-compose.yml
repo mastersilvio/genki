@@ -1,0 +1,64 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: genki
+      POSTGRES_USER: genki
+      POSTGRES_PASSWORD: genki
+    ports:
+      - "${POSTGRES_PORT:-5438}:5432"
+    volumes:
+      - genki_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U genki -d genki"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:8-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "${REDIS_PORT:-6380}:6379"
+    volumes:
+      - genki_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    environment:
+      APP_ENV: development
+      APP_PORT: 3005
+      APP_SECRET_KEY: local-compose-secret-key-change-before-production
+      DATA_ENCRYPTION_KEY: local-compose-data-key-change-before-production
+      DATABASE_URL: postgres://genki:genki@postgres:5432/genki
+      REDIS_URL: redis://redis:6379
+      WEB_ORIGIN: http://localhost:5174
+    ports:
+      - "${API_PORT:-3005}:3005"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web.Dockerfile
+    environment:
+      VITE_API_URL: http://localhost:3005/api/v1
+    ports:
+      - "0.0.0.0:${WEB_PORT:-5174}:5174"
+    depends_on:
+      - api
+
+volumes:
+  genki_postgres:
+  genki_redis:

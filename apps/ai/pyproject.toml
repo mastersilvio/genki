@@ -1,0 +1,12 @@
+[project]
+name = "genki-ai"
+version = "0.1.0"
+description = "Reserva para algoritmos e serviços de IA do Genki."
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.ruff]
+line-length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
