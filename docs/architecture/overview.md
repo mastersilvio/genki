@@ -27,4 +27,3 @@ As Fases 0 e 1 fornecem autenticação local, infraestrutura, contratos, modelo 
 - todo registro canônico pode apontar para provider, aplicação, dispositivo, lote e arquivo;
 - dados brutos são imutáveis e separados dos valores normalizados;
 - as APIs são versionadas em `/api/v1`.
-

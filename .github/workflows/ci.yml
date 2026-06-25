@@ -53,4 +53,3 @@ jobs:
       - run: bun run test
       - run: bun run build
       - run: docker compose config
-

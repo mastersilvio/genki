@@ -9,4 +9,3 @@
 7. Registre o RPO e RTO observados.
 
 Metas iniciais: RPO de 24 horas e RTO de 2 horas.
-

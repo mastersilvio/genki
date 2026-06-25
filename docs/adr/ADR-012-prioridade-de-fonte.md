@@ -3,4 +3,3 @@
 **Status:** Aceito
 
 Prioridade não é global: pode variar por usuário, métrica, dispositivo e período. A seleção canônica não apaga fontes alternativas.
-

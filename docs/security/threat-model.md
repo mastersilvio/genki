@@ -21,4 +21,3 @@
 | Supply chain | lockfile, CI e revisão de dependências |
 
 Antes de produção ainda são obrigatórios: cookies HttpOnly com CSRF, rotação de chaves, criptografia do storage, rate limiting, auditoria completa e teste de restauração.
-

@@ -8,4 +8,3 @@
 6. Confirme idempotência e recalcule apenas agregações afetadas.
 
 Nunca copie conteúdo clínico completo para tickets ou logs.
-

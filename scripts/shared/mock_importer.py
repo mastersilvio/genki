@@ -49,4 +49,3 @@ class MockImporter:
         except ValueError:
             return ValidationResult(False, ("value must be numeric",))
         return ValidationResult(True)
-

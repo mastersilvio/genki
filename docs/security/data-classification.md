@@ -8,4 +8,3 @@
 | Altamente sensível | saúde, localização, documentos, tokens | criptografia, logs sanitizados e acesso mínimo |
 
 Payloads brutos, documentos clínicos e coordenadas nunca devem aparecer integralmente em logs.
-

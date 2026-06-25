@@ -18,4 +18,3 @@
 | `source_priorities` | Preferência por métrica, fonte e período |
 
 Todas as entidades principais usam UUID, `created_at` e `updated_at`. Valores de saúde são armazenados como `NUMERIC`, nunca como ponto flutuante binário.
-

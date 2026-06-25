@@ -3,4 +3,3 @@
 **Status:** Aceito
 
 Arquivos e payloads recebidos são imutáveis. Normalizações produzem novos registros, permitindo reprocessamento, auditoria e evolução dos parsers.
-
