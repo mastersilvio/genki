@@ -15,7 +15,7 @@ const environmentSchema = z.object({
   DATABASE_URL: z
     .string()
     .default("postgres://genki:genki@localhost:5438/genki"),
-  REDIS_URL: z.string().default("redis://localhost:6379"),
+  REDIS_URL: z.string().default("redis://localhost:6380"),
   STORAGE_BACKEND: z.enum(["local", "s3"]).default("local"),
   LOCAL_STORAGE_PATH: z.string().default("./storage"),
   WEB_ORIGIN: z.string().default("http://localhost:5174"),

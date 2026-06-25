@@ -33,7 +33,7 @@ bun run dev
 Se as portas padrão já estiverem ocupadas:
 
 ```bash
-POSTGRES_PORT=15438 REDIS_PORT=56379 docker compose up -d postgres redis
+POSTGRES_PORT=15438 REDIS_PORT=16380 docker compose up -d postgres redis
 DATABASE_URL=postgres://genki:genki@localhost:15438/genki bun run db:migrate
 ```
 
@@ -43,7 +43,7 @@ Serviços:
 - OpenAPI: http://localhost:3005/api/v1/openapi
 - Web: http://localhost:5174 (bind em `0.0.0.0:5174`)
 - PostgreSQL: `localhost:5438`
-- Redis: `localhost:6379`
+- Redis: `localhost:6380`
 
 O seed cria o usuário local `silvio@example.com` com a senha `genki-local-2026`. Essa credencial é sintética e serve apenas para desenvolvimento.
 

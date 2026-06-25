@@ -28,7 +28,7 @@ jobs:
       redis:
         image: redis:8-alpine
         ports:
-          - 6379:6379
+          - 6380:6379
         options: >-
           --health-cmd "redis-cli ping"
           --health-interval 5s
@@ -39,7 +39,7 @@ jobs:
       APP_SECRET_KEY: ci-only-secret-key-with-thirty-two-characters
       DATA_ENCRYPTION_KEY: ci-only-data-key-with-thirty-two-characters
       DATABASE_URL: postgres://genki:genki@localhost:5438/genki
-      REDIS_URL: redis://localhost:6379
+      REDIS_URL: redis://localhost:6380
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
